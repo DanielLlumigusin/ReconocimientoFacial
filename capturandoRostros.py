@@ -2,12 +2,13 @@ import cv2
 import os
 import imutils
 
-emotionName = 'Enojo'
+
+#emotionName = 'Enojo'
 #emotionName = 'Felicidad'
 #emotionName = 'Sorpresa'
-#motionName = 'Tristeza'
+emotionName = 'Tristeza'
 
-dataPath = 'Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'Data' 
 emotionsPath = dataPath + '/' + emotionName
 
 if not os.path.exists(emotionsPath):
@@ -33,12 +34,12 @@ while True:
 		cv2.rectangle(frame, (x,y),(x+w,y+h),(0,255,0),2)
 		rostro = auxFrame[y:y+h,x:x+w]
 		rostro = cv2.resize(rostro,(150,150),interpolation=cv2.INTER_CUBIC)
-		cv2.imwrite(emotionsPath + '/rotro_{}.jpg'.format(count),rostro)
+		cv2.imwrite(emotionsPath + '/rostro_{}.jpg'.format(count),rostro)
 		count = count + 1
 	cv2.imshow('frame',frame)
 
 	k =  cv2.waitKey(1)
-	if k == 27 or count >= 200:
+	if k == 27 or count >= 250:
 		break
 
 cap.release()

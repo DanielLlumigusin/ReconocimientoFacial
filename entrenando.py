@@ -18,7 +18,7 @@ def obtenerModelo(method,facesData,labels):
 	# Almacenando el modelo obtenido
 	emotion_recognizer.write("modelo"+method+".xml")
 
-dataPath = 'Data' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'Data'
 emotionsList = os.listdir(dataPath)
 print('Lista de personas: ', emotionsList)
 
@@ -30,12 +30,8 @@ for nameDir in emotionsList:
 	emotionsPath = dataPath + '/' + nameDir
 
 	for fileName in os.listdir(emotionsPath):
-		#print('Rostros: ', nameDir + '/' + fileName)
 		labels.append(label)
 		facesData.append(cv2.imread(emotionsPath+'/'+fileName,0))
-		#image = cv2.imread(emotionsPath+'/'+fileName,0)
-		#cv2.imshow('image',image)
-		#cv2.waitKey(10)
 	label = label + 1
 
 obtenerModelo('EigenFaces',facesData,labels)
