@@ -1,20 +1,22 @@
 import sys
 import os
+from tkinter import Tk
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from Models.model import Model
 from Screen.main_view import MainView
-from Screen.secondary_view import SecondaryView
+from Screen.credits_view import CreditsView
 from Screen.capture_view import CaptureView
 from Screen.training_view import TrainingView
 from Screen.emotion_view import EmotionView
-from tkinter import Tk
+from controllerCapture import ControllerCapture
 
 class Controller:
-    def __init__(self):
-        self.root = Tk()
+    def __init__(self, root):
+        self.root = root
         self.model = Model()
         self.current_view = None
+        self.controllerCapture = ControllerCapture(root, self)
         self.switch_to_main_view()
 
     def run(self):
@@ -25,26 +27,27 @@ class Controller:
             self.current_view.destroy()
         self.current_view = MainView(self.root, self)
 
-    def switch_to_secondary_view(self):
+    def switch_to_capture_view(self):
         if self.current_view is not None:
             self.current_view.destroy()
-        self.current_view = SecondaryView(self.root, self)
+        self.current_view = CaptureView(self.root, self.controllerCapture)
 
-    def capture_data(self):
-        if self.current_view is not None:
-            self.current_view.destroy()
-        self.current_view = CaptureView(self.root, self)
-
-    def train_data(self):
+    def switch_to_training_view(self):
         if self.current_view is not None:
             self.current_view.destroy()
         self.current_view = TrainingView(self.root, self)
 
-    def recognize(self):
+    def switch_to_emotion_view(self):
         if self.current_view is not None:
             self.current_view.destroy()
         self.current_view = EmotionView(self.root, self)
 
+    def switch_to_credits_view(self):
+        if self.current_view is not None:
+            self.current_view.destroy()
+        self.current_view = CreditsView(self.root, self)
+        
 if __name__ == "__main__":
-    app = Controller()
+    root = Tk()
+    app = Controller(root)
     app.run()

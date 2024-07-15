@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from styles import setup_styles
 
-class SecondaryView:
+class CreditsView:
     def __init__(self, root, controller):
         self.root = root
         self.controller = controller

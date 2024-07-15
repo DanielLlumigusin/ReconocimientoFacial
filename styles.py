@@ -17,3 +17,5 @@ def setup_styles():
     # Estilo personalizado para el título
     style.configure("Title.TLabel",
                     font=("Helvetica", 20, "bold"))
+
+
