@@ -1,10 +1,16 @@
-Reconocimiento Facial
+**Reconocimiento de Emociones**
+
+Entorno de Ejecución
 
 Librerias necesarias
 pip install opencv-python
 pip install numpy
 pip install imutils
+pip install tkinter
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Version 1.0**
 1. Primer paso
 Se debe almacenar información en la Data.
 
@@ -19,3 +25,17 @@ Una vez cargada la data con sus respectivas carpetas de emociones, se debe proce
 
 3. Tercer paso
 Por último se debe ejecutar el archivo reconocimientoEmociones.py, se nos abrirá la cámara donde se ejecutara el modelo elegido por código y empezará el reconocimiento.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Version 2.0**
+
+Implementación de Interfaz mediante tkinter
+
+Menú
+  - Captura de Datos
+  - Entrenar Datos
+  - Reconocimiento
+  - Créditos
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
