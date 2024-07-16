@@ -18,4 +18,6 @@ def setup_styles():
     style.configure("Title.TLabel",
                     font=("Helvetica", 20, "bold"))
 
-
+    style.configure("Credits.TLabel",
+                    font=("Times New Roman", 20)
+                    )
