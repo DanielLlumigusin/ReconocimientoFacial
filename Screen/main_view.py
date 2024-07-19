@@ -24,8 +24,9 @@ class MainView:
         image = image.resize((300, 400)) 
         self.photo = ImageTk.PhotoImage(image)
         
+        
         ttk.Label(self.frm, image=self.photo).grid(column=0, row=0, rowspan=5, padx=10, pady=25 )
-        ttk.Label(self.frm, text="¡Reconocimiento \n de Emociones!", style="Title.TLabel").grid(column=1, row=0,  padx=50)
+        ttk.Label(self.frm, text="¡Reconocimiento \n de Emociones!", style="Title.TLabel").grid(column=1, row=0,  padx=50, pady = 10)
         
         self.capture_button = ttk.Button(self.frm, text="Capturar Datos", style="Custom.TButton", command=self.controller.switch_to_capture_view)
         self.capture_button.grid(column=1, row=1, )
