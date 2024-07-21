@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from styles import setup_styles
+from util.styles import setup_styles
 
 class EmotionView:
     def __init__(self, root, controller):

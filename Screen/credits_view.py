@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from styles import setup_styles
+from util.styles import setup_styles
 from PIL import Image, ImageTk
 
 class CreditsView:
