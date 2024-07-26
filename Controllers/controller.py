@@ -10,13 +10,14 @@ from Screen.capture_view import CaptureView
 from Screen.training_view import TrainingView
 from Screen.emotion_view import EmotionView
 from controllerCapture import ControllerCapture
-
+from controllerTraining import ControllerTraining
 class Controller:
     def __init__(self, root):
         self.root = root
         self.model = Model()
         self.current_view = None
         self.controllerCapture = ControllerCapture(root, self)
+        self.controllerTraining = ControllerTraining(root, self)
         self.switch_to_main_view()
 
     def run(self):
@@ -35,7 +36,7 @@ class Controller:
     def switch_to_training_view(self):
         if self.current_view is not None:
             self.current_view.destroy()
-        self.current_view = TrainingView(self.root, self)
+        self.current_view = TrainingView(self.root, self.controllerTraining)
 
     def switch_to_emotion_view(self):
         if self.current_view is not None:

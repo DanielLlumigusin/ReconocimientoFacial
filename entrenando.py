@@ -20,7 +20,7 @@ def obtenerModelo(method,facesData,labels):
 
 dataPath = 'Data'
 emotionsList = os.listdir(dataPath)
-print('Lista de personas: ', emotionsList)
+print('Lista de emociones: ', emotionsList)
 
 labels = []
 facesData = []

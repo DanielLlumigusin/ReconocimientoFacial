@@ -3,6 +3,7 @@
 Entorno de Ejecución
 
 Librerias necesarias
+pip install opencv-contrib-python
 pip install opencv-python
 pip install numpy
 pip install imutils
