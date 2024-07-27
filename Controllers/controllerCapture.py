@@ -29,6 +29,6 @@ class ControllerCapture:
 # Ejecutar el controlador
 if __name__ == "__main__":
     root = Tk()
-    controller_main = None  # Placeholder para evitar error en ejecución directa
+    controller_main = None  
     controller = ControllerCapture(root, controller_main)
     root.mainloop()

@@ -50,7 +50,7 @@ def main():
         recognizer = load_trained_model(METHOD)
 
         # Directorio donde se almacenan los datos de entrenamiento
-        data_path = 'Data'
+        data_path = 'DataSet'
         image_paths = os.listdir(data_path)
         print('imagePaths=', image_paths)
 

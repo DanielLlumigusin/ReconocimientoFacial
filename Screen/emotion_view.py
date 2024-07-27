@@ -18,10 +18,18 @@ class EmotionView:
         self.root.columnconfigure(0, weight=1)
         self.root.rowconfigure(0, weight=1)
         
-        ttk.Label(self.frm, text="¡Vista de Reconocimiento de Emociones!", style="Title.TLabel").grid(column=0, row=0, pady=10, padx=75)
+        #Iniciar
+        self.titleEmotion = ttk.Label(self.frm, text="¡Vista de Reconocimiento de Emociones!", style="Title.TLabel")
+        self.camera = ttk.Label(self.frm, text="Cámara")
+        self.back_button = ttk.Button(self.frm, text="Regresar", style="Custom.TButton", command=self.controller.switch_to_main_view)
+        #Configurar
         
-        self.back_button = ttk.Button(self.frm, text="Regresar a la vista principal", style="Custom.TButton", command=self.controller.switch_to_main_view)
-        self.back_button.grid(column=0, row=1, pady=10)
+        self.frm.rowconfigure(2, weight=1)
+        #Dibujar
+        
+        self.titleEmotion.grid(column=0, row=0, pady=10, padx=75)
+        self.camera.grid(column=0, row=1, pady=150)
+        self.back_button.grid(column=0, row=2, pady=10, sticky=(S,E))
 
     def destroy(self):
         self.frm.destroy()

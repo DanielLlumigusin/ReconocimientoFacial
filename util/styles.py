@@ -21,3 +21,10 @@ def setup_styles():
     style.configure("Credits.TLabel",
                     font=("Times New Roman", 20)
                     )
+
+    style.configure("Train.TButton",
+                    background="green",
+                    foreground="white",
+                    font = ("Helvetica", 14, "bold"),
+                    padding=10
+                    )
