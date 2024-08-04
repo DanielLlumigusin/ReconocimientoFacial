@@ -46,7 +46,7 @@ Mejoras y Completo
 
 1. Ejecutar con el comando **python main.py**
 
-![](https://github.com/DanielLlumigusin/ReconocimientoFacial/blob/main/README_IMG/Menu.png)
+![](https://github.com/DanielLlumigusin/ReconocimientoFacial/blob/main/README_IMG/menu.png)
 
 2. Dar clic en el botón de **Capturar Datos**
 
