@@ -15,7 +15,7 @@ class CaptureScreen(Tk):
         super().__init__()
         self.navigator = navigator
         self.title("Capturar Emociones")
-        self.geometry("768x576")
+        self.geometry("850x500")
         
         # Configurar estilos
         setup_styles()

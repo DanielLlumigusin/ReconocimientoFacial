@@ -13,7 +13,7 @@ class MenuScreen(Tk):
         
         # Cargar y redimensionar la imagen
         try:
-            self.image = Image.open("emociones.png").resize((300, 400))
+            self.image = Image.open("emociones.png").resize((400, 400))
             self.photo = ImageTk.PhotoImage(self.image)
         except Exception as e:
             print(f"Error al cargar la imagen: {e}")

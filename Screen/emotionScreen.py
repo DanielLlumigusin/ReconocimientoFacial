@@ -12,7 +12,7 @@ class EmotionScreen(tk.Tk):
         super().__init__()
         self.navigator = navigator
         self.title("Reconocimiento de Emociones")
-        self.geometry("800x600")
+        self.geometry("720x600")
         self.METHOD = "LBPH"
         self.path = "DataSet"
         self.image_paths = os.listdir(self.path)
@@ -52,7 +52,7 @@ class EmotionScreen(tk.Tk):
     def update_camera(self):
         ret, frame = self.cap.read()
         if ret:
-            frame = imutils.resize(frame, width=640)
+            frame = imutils.resize(frame, width=680)
             frame = self.deteccion_facilal(frame)
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             im = Image.fromarray(frame)

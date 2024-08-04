@@ -14,7 +14,7 @@ class TrainScreen(Tk):
         super().__init__()
         self.navigator = navigator
         self.title("Entrenar Emociones")
-        self.geometry("768x576")
+        self.geometry("720x480")
         
         # Configurar estilos
         setup_styles()
