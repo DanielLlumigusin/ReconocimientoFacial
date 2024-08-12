@@ -8,6 +8,7 @@ pip install opencv-python
 pip install numpy
 pip install imutils
 pip install tkinter
+pip install Pillow
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
