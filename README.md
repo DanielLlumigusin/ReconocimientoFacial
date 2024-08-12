@@ -2,12 +2,18 @@
 
 Entorno de Ejecución
 
-Librerias necesarias
+**Librerias necesarias**
+
 pip install opencv-contrib-python
+
 pip install opencv-python
+
 pip install numpy
+
 pip install imutils
+
 pip install tkinter
+
 pip install Pillow
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
