@@ -23,8 +23,8 @@ def setup_styles():
                     )
 
     style.configure("Train.TButton",
-                    background="green",
-                    foreground="white",
+                    background="#007acc",
+                    foreground="black",
                     font = ("Helvetica", 14, "bold"),
                     padding=10
                     )

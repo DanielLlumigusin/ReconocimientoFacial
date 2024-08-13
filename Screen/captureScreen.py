@@ -122,8 +122,15 @@ class CaptureScreen(Tk):
         if not os.path.exists(emotion_dir):
             os.makedirs(emotion_dir)
         
-        captured_count = 0
-        while captured_count < 250:
+        # Contar el número de archivos existentes en el directorio
+        existing_files = os.listdir(emotion_dir)
+        if len(existing_files) > 0:
+            img_count = len([file for file in existing_files if file.endswith(".jpg")])
+        else:
+            img_count = 0
+        start_time = time.time()
+        
+        while (time.time() - start_time) < 10:  # Capturar durante 10 segundos
             if self.cap.isOpened():
                 ret, frame = self.cap.read()
                 if ret:
@@ -133,11 +140,9 @@ class CaptureScreen(Tk):
                     for (x, y, w, h) in faces:
                         rostro = frame[y:y + h, x:x + w]
                         rostro = cv2.resize(rostro, (150, 150), interpolation=cv2.INTER_CUBIC)
-                        img_name = os.path.join(emotion_dir, f'rostro_{captured_count}.jpg')
+                        img_name = os.path.join(emotion_dir, f'rostro_{img_count}.jpg')
                         cv2.imwrite(img_name, rostro)
-                        captured_count += 1
-                        if captured_count >= 250:
-                            break
+                        img_count += 1
             time.sleep(0.1)
 
 if __name__ == "__main__":
