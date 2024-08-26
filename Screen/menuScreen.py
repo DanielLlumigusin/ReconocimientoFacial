@@ -20,7 +20,7 @@ class MenuScreen(Tk):
             self.photo = None
         
         # Inicializar frame
-        self.frm = ttk.Frame(self, padding=10)
+        self.frm = ttk.Frame(self, style="TFrame")
         self.frm.grid(column=0, row=0, sticky=(N, S, E, W))
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
@@ -34,9 +34,9 @@ class MenuScreen(Tk):
         self.imgMenu = ttk.Label(self.frm, image=self.photo)
         self.titleMenu = ttk.Label(self.frm, text="¡Reconocimiento \n de Emociones!", style="Title.TLabel")
         self.capture_button = ttk.Button(self.frm, text="Capturar Datos", style="Custom.TButton", command=self.navigator.switch_to_capture_view)
-        self.train_button = ttk.Button(self.frm, text="Entrenar Datos", style="Custom.TButton", command=self.navigator.switch_to_train_view)
+        self.train_button = ttk.Button(self.frm, text="Entrenar Datos", style="Train.TButton", command=self.navigator.switch_to_train_view)
         self.recognize_button = ttk.Button(self.frm, text="Reconocimiento", style="Custom.TButton", command=self.navigator.switch_to_emotion_view)
-        self.switch_button = ttk.Button(self.frm, text="Créditos", style="Custom.TButton",command=self.navigator.switch_to_credits_view)
+        self.switch_button = ttk.Button(self.frm, text="Créditos", style="Custom.TButton", command=self.navigator.switch_to_credits_view)
         
         # Posicionar widgets en la grilla
         if self.photo:
@@ -46,8 +46,6 @@ class MenuScreen(Tk):
         self.train_button.grid(column=1, row=2, pady=10)
         self.recognize_button.grid(column=1, row=3, pady=10)
         self.switch_button.grid(column=1, row=4, pady=10)
-        
-        
 
 if __name__ == "__main__":
     navigator = Navegator()
